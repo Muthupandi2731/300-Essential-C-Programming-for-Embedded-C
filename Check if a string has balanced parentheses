@@ -1,0 +1,73 @@
+Ensure that for every opening bracket, parenthesis, or brace in the string, there's a
+corresponding closing counterpart, and they are correctly nested.
+(e.g.: I/P: "()[{}]" ,O/P: "True")
+
+Coding//
+  #include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    int count=0;
+    scanf("%[^\n]", str);
+    int len =strlen(str);
+    if(len%2==1)
+    {
+        printf("False");
+    }else
+    {
+    for(int i=0;i<len-1;i++)
+    {  if(str[i]==1) continue;
+    
+    
+        int flag=0;
+        int num=(int)str[i];
+        if(str[i]=='(')
+        {
+            for(int j=i+1;j<len;j++)
+            {
+                if(num+1==(int)str[j])
+                {
+                    str[j]=1;
+                    flag=1;
+                    count++;
+                    break;
+                }
+            }if(flag==1)
+            {
+                continue;
+            }else
+            {
+                break;
+            }
+        }else
+        {
+            for(int j=i+1;j<len;j++)
+            {
+                if(num+2==(int)str[j])
+                {
+                    str[j]=1;
+                    flag=1;
+                    count++;
+                    break;
+                }
+            }if(flag==1)
+            {
+                continue;
+            }else
+            {
+                break;
+        }
+    }
+    }
+    if(count==len/2)
+    {
+        printf("True");
+    }else
+    {
+        printf("False");
+    }
+}
+    return 0;
+}
