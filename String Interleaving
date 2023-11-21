@@ -1,0 +1,25 @@
+Determine if a given string is an interleaving of two other strings. For example, "abc"
+and "123" can be interleaved as "a1b2c3".
+(e.g.: I/P: Strings: "xyz", "789", Interleaved: "x7y8z9"; O/P: True)
+Coding// 
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char sentence1[100],sentence2[100];
+
+    // Get user input for the sentence
+    printf("Enter a sentences: ");
+   scanf("%s\n%s",sentence1,sentence2);
+   if(strlen(sentence1)==strlen(sentence2))
+   {
+for(int i=0;i<strlen(sentence1);i++)
+{
+   printf("%c%c",sentence1[i],sentence2[i]);
+}
+printf("True");
+}else
+{
+    printf("False");
+}
+}
