@@ -1,0 +1,29 @@
+Tally the number of vowel and consonant characters in the given string.
+(e.g.: I/P: "apple" ,O/P: Vowels: 2, Consonants: 3)
+
+Coding//
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    int count1=0,count2=0;
+    scanf("%s",str);
+    for(int i=0;str[i]!='\0';i++)
+    {
+        char ch=tolower(str[i]);
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+        {
+            count1++;
+            
+        }else
+    {
+        count2++;
+    }
+    }
+    printf("Vowels: %d\n",count1);
+    printf("Constant: %d",count2);
+    
+}
+
